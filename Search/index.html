@@ -4,59 +4,41 @@
         <title>Google Search</title>
         
 <style>
-h1 {
-    color: blue;
-    font-family: Product Sans;
+html, body {
+    height: 100%;
 }
 
-.Google-Search-logo {
+.Search-logo {
     font-family: 'Product Sans', Arial, sans-serif;
     font-size: 72px;
-    margin: auto;
     text-align: center;
-    display:flex; 
 }
 
-.G-character {
-    color:blue;
+.SearchForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.SearchBar {
+    border-radius: 20px;
+    border-width: 10px;
+    width: 80%;
+    color: blue;
 }
 
-.o-character-1 {
-    color:red;
-}
-
-.o-character-2 {
-    color:orange;
-}
-
-.g-character {
-    color:blue;
-}
-
-.l-character {
-    color:green;
-}
-
-.e-character {
-    color:red;
+.SubmitButton {
 }
 </style>
 
     </head>
     <body>
-        <div class="Google-Search-logo">
-            <span class="G-character">G</span>
-            <span class="o-character-1">o</span>
-            <span class="o-character-2">o</span>
-            <span class="g-character">g</span>
-            <span class="l-character">l</span>
-            <span class="e-character">e</span>
-
-            <span class="Search">Search</span>
+        <div class="Search-logo">
+            <span>Search</span>
         </div>
-        <form action="https://www.google.com/search">
-            <input type="text" name="q">
-            <input type="submit" value="Google Search">
+        <form class="SearchForm" action="https://www.google.com/search">
+            <input class="SearchBar" type="text" name="q">
+            <input class="SubmitButton" type="submit" value="Google Search">
         </form>
     </body>
 </html>
