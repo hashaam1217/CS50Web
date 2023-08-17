@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Google Search</title>
+        <title>Advanced Search</title>
         
 <style>
 body {
@@ -66,17 +66,18 @@ input:hover{
     </head>
     <body>
         <div class="TopBar">
-            <a href="./pages/AdvancedSearch.html">
-                <button type="button" class="AdvancedSearchButton">Advanced Search</button>
-            </a>
-            <a href="./pages/ImageSearch.html">
-                <button type="button" class="ImageSearchButton">Image Search</button>
+            <a href="../index.html">
+                <button type="button" class="Return">Go back</button>
             </a>
         </div>
         <div class="Search">
-            <span class="Title">Search</span>
+            <span class="Title">Advanced Search</span>
             <form class="SearchForm" action="https://www.google.com/search">
-                <input class="SearchBar" type="text" name="q">
+                <h2>Heading<h2>
+                <input class="SearchBar" type="text" name="as_q">
+                <input class="SearchBar" type="text" name="as_epq">
+                <input class="SearchBar" type="text" name="as_oq">
+                <input class="SearchBar" type="text" name="as_eq">
                 <input class="SubmitButton" type="submit" value="Google Search">
             </form>
         </div>
