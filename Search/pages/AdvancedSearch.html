@@ -40,7 +40,6 @@ input:hover{
 }
 .Search {
     font-family: 'Product Sans', Arial, sans-serif;
-    font-size: 72px;
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -51,6 +50,10 @@ input:hover{
 
 }
 
+.Title {
+    font-size: 72px;
+}
+
 
 .SearchBar {
     border-radius: 20px;
@@ -59,7 +62,13 @@ input:hover{
     color: rgb(200, 200, 200);
 }
 
-.SubmitButton {
+.SearchForm {
+    text-align: left;
+}
+
+#SubmitButton {
+    color: white;
+    background-color: blue;
 }
 </style>
 
@@ -73,12 +82,16 @@ input:hover{
         <div class="Search">
             <span class="Title">Advanced Search</span>
             <form class="SearchForm" action="https://www.google.com/search">
-                <h2>Heading<h2>
+                <h1>Find pages with...</h1>
+                <h2>all the words</h2>
                 <input class="SearchBar" type="text" name="as_q">
+                <h2>this exact word or phrase</h2>
                 <input class="SearchBar" type="text" name="as_epq">
+                <h2>any of these words</h2>
                 <input class="SearchBar" type="text" name="as_oq">
+                <h2>none of these words<h2>
                 <input class="SearchBar" type="text" name="as_eq">
-                <input class="SubmitButton" type="submit" value="Google Search">
+                <input id="SubmitButton" type="submit" value="Advanced Search">
             </form>
         </div>
     </body>
