@@ -11,20 +11,33 @@ body {
 .TopBar {
     background-color: black;
     color: white;
+    height: 10vh;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
 }
 
-.LeftSection {
-    float: left;
-    width: 50%;
-    background-color: black;
+button, input {
+    background-color: grey;
+    border-radius: 10px;
+    transition-duration: 0.4s;
+    font-size: 20px;
+    border: darkgrey solid 2px;
+    padding: 5px;
+    margin: 5px;
 }
 
-.RightSection {
-    float: right;
-    width: 50%;
-    background-color: black;
+button:hover{
+    background-color: darkgrey;
+    font-size: 30px
 }
 
+input:hover{
+    background-color: rgb(99, 99, 99);
+    font-size: 30px
+}
 .Search {
     font-family: 'Product Sans', Arial, sans-serif;
     font-size: 72px;
@@ -34,20 +47,10 @@ body {
     align-items: center;
     justify-content: center;
     flex-grow: 1;
-    border: 3px solid white;
     height: 90vh;
 
 }
 
-.Search > * {
-}
-
-.Title{
-
-}
-
-.SearchForm {
-}
 
 .SearchBar {
     border-radius: 20px;
@@ -63,12 +66,12 @@ body {
     </head>
     <body>
         <div class="TopBar">
-            <div class="LeftSection">
-                <a href="https://google.com"><button>Advanced Search</button></a>
-            </div>
-            <div class="RightSection">
-                <a href="https://google.com"><button>Advanced Search</button></a>
-            </div>
+            <a href="https://google.com">
+                <button type="button" class="AdvancedSearchButton">Advanced Search</button>
+            </a>
+            <a href="https://google.com">
+                <button type="button" class="ImageSearchButton">Image Search</button>
+            </a>
         </div>
         <div class="Search">
             <span class="Title">Search</span>
