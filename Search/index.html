@@ -4,22 +4,51 @@
         <title>Google Search</title>
         
 <style>
-html, body {
-    height: 100%;
+body {
+    background-color: darkgrey;
 }
 
-.Search-logo {
+.TopBar {
+    background-color: black;
+    color: white;
+}
+
+.LeftSection {
+    float: left;
+    width: 50%;
+    background-color: black;
+}
+
+.RightSection {
+    float: right;
+    width: 50%;
+    background-color: black;
+}
+
+.Search {
     font-family: 'Product Sans', Arial, sans-serif;
     font-size: 72px;
     text-align: center;
-}
-
-.SearchForm {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    flex-grow: 1;
+    border: 3px solid white;
+    height: 90vh;
+
 }
+
+.Search > * {
+}
+
+.Title{
+
+}
+
+.SearchForm {
+}
+
 .SearchBar {
     border-radius: 20px;
     border-width: 10px;
@@ -33,13 +62,21 @@ html, body {
 
     </head>
     <body>
-        <div class="Search-logo">
-            <span>Search</span>
+        <div class="TopBar">
+            <div class="LeftSection">
+                <a href="https://google.com"><button>Advanced Search</button></a>
+            </div>
+            <div class="RightSection">
+                <a href="https://google.com"><button>Advanced Search</button></a>
+            </div>
         </div>
-        <form class="SearchForm" action="https://www.google.com/search">
-            <input class="SearchBar" type="text" name="q">
-            <input class="SubmitButton" type="submit" value="Google Search">
-        </form>
+        <div class="Search">
+            <span class="Title">Search</span>
+            <form class="SearchForm" action="https://www.google.com/search">
+                <input class="SearchBar" type="text" name="q">
+                <input class="SubmitButton" type="submit" value="Google Search">
+            </form>
+        </div>
     </body>
 </html>
 
