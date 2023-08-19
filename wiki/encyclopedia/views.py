@@ -13,10 +13,16 @@ def pages(request, page_name):
     output = util.get_entry(page_name)
     
     if (output is not None):
-        #return HttpResponse(markdown2.markdown(output))
         return render(request, "encyclopedia/pages.html", {
             "page_name": page_name,
             "markdown_to_HTML": markdown2.markdown(output),
             })
 
     return render(request, "encyclopedia/pagenotfound.html")
+
+def Search(request):
+    query = request.GET.get('q', '')
+    if (query in util.list_entries()):
+        return pages(request, query)
+
+    return HttpResponse("False")
