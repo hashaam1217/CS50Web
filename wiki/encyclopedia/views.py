@@ -25,4 +25,13 @@ def Search(request):
     if (query in util.list_entries()):
         return pages(request, query)
 
-    return HttpResponse("False")
+    searchresults = []
+    for entry in util.list_entries(): 
+        index = entry.find(query)
+        if index != -1:
+            searchresults.append(entry)
+
+    return render(request, "encyclopedia/searchresults.html", {
+        "query":query, 
+        "entries":searchresults
+        })
