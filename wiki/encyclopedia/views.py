@@ -68,6 +68,7 @@ def NewPage(request):
                     })
 
             #Saves to disk
+            page = f"#{title}\n{page}"
             util.save_entry(title, page)
             #Takes us to a new form
             return render(request, "encyclopedia/newpage.html", {
@@ -86,4 +87,26 @@ def NewPage(request):
     return render(request, "encyclopedia/newpage.html", {
         "form": NewTaskForm(),
         "error":no_error
+        })
+
+def EditPage(request, page_name):
+
+    #Handles POST request
+    if (request.method == "POST"):
+        new_content = f"# {page_name}\n{request.POST.get('changed_page_content')}"
+        util.save_entry(page_name, new_content)
+        return HttpResponseRedirect(f"/wiki/{page_name}")
+        #return HttpResponse(request.POST.get('changed_page_content'))
+
+
+    #Handles GET request (from clicking the button on the wiki page)
+    #Splits title and page content
+    content = util.get_entry(page_name)
+    lines = content.split('\n')
+    title = lines.pop(0)
+    page ='\n'.join(lines)
+
+    return render(request, "encyclopedia/editpage.html", {
+        "page_name": page_name, 
+        "page": page,
         })
