@@ -6,6 +6,7 @@ from django.http import HttpResponse
 import markdown2
 from django.urls import reverse
 from django.http import HttpResponseRedirect
+import random
 
 #For NewPage function for creating a new wiki entry
 class NewTaskForm(forms.Form):
@@ -110,3 +111,7 @@ def EditPage(request, page_name):
         "page_name": page_name, 
         "page": page,
         })
+
+def Random(request): 
+    entries = util.list_entries()
+    return HttpResponseRedirect(f"/wiki/{random.choice(entries)}/")
